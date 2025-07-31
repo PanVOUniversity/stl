@@ -39,3 +39,44 @@
 
 # debug information files
 *.dwo
+
+# Build directory
+build/
+
+# Generated executables
+skip_list
+test_skip_list
+
+# Documentation
+docs/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Coverage files
+*.gcov
+*.gcda
+*.gcno
+coverage.info
+
+# Backup files
+*.bak
+*.backup

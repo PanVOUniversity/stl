@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>STL Skip List Container: Файл src/skip_list.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">STL Skip List Container
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   <div id="projectbrief">Реализация STL-контейнера &#39;Список с пропусками&#39;</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('skip__list_8cpp.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл skip_list.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Примеры использования STL-контейнера "Список с пропусками".  
+<a href="#details">Подробнее...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="skip__list_8hpp_source.html">../include/skip_list.hpp</a>&quot;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Граф включаемых заголовочных файлов для skip_list.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="skip__list_8cpp__incl.png" border="0" usemap="#asrc_2skip__list_8cpp" alt=""/></div>
+<map name="asrc_2skip__list_8cpp" id="asrc_2skip__list_8cpp">
+<area shape="rect" title="Примеры использования STL&#45;контейнера &quot;Список с пропусками&quot;." alt="" coords="602,5,729,32"/>
+<area shape="rect" href="skip__list_8hpp.html" title="Реализация STL&#45;контейнера &quot;Список с пропусками&quot; (Skip List)" alt="" coords="387,80,554,107"/>
+<area shape="rect" title=" " alt="" coords="579,80,659,107"/>
+<area shape="rect" title=" " alt="" coords="683,80,741,107"/>
+<area shape="rect" title=" " alt="" coords="765,80,832,107"/>
+<area shape="rect" title=" " alt="" coords="5,155,83,181"/>
+<area shape="rect" title=" " alt="" coords="107,155,179,181"/>
+<area shape="rect" title=" " alt="" coords="203,155,290,181"/>
+<area shape="rect" title=" " alt="" coords="314,155,406,181"/>
+<area shape="rect" title=" " alt="" coords="431,155,511,181"/>
+<area shape="rect" title=" " alt="" coords="535,155,606,181"/>
+<area shape="rect" title=" " alt="" coords="631,155,716,181"/>
+<area shape="rect" title=" " alt="" coords="741,155,851,181"/>
+<area shape="rect" title=" " alt="" coords="875,155,938,181"/>
+</map>
+</div>
+</div>
+<p><a href="skip__list_8cpp_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a8ee54a6c0775ae6a93448571be3e27e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#a8ee54a6c0775ae6a93448571be3e27e8">demonstrate_basic_operations</a> ()</td></tr>
+<tr class="memdesc:a8ee54a6c0775ae6a93448571be3e27e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация основных операций со списком с пропусками  <a href="skip__list_8cpp.html#a8ee54a6c0775ae6a93448571be3e27e8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a8ee54a6c0775ae6a93448571be3e27e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53c59ed4295c2f19bb29067ba0e15138"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#a53c59ed4295c2f19bb29067ba0e15138">demonstrate_custom_types</a> ()</td></tr>
+<tr class="memdesc:a53c59ed4295c2f19bb29067ba0e15138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация работы с пользовательскими типами  <a href="skip__list_8cpp.html#a53c59ed4295c2f19bb29067ba0e15138">Подробнее...</a><br /></td></tr>
+<tr class="separator:a53c59ed4295c2f19bb29067ba0e15138"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e4b4a9b51db6576a581b81354954553"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#a4e4b4a9b51db6576a581b81354954553">demonstrate_performance</a> ()</td></tr>
+<tr class="memdesc:a4e4b4a9b51db6576a581b81354954553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация производительности  <a href="skip__list_8cpp.html#a4e4b4a9b51db6576a581b81354954553">Подробнее...</a><br /></td></tr>
+<tr class="separator:a4e4b4a9b51db6576a581b81354954553"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acacd646dd93fb5b4a63b34599de55d1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#acacd646dd93fb5b4a63b34599de55d1c">demonstrate_iterators</a> ()</td></tr>
+<tr class="memdesc:acacd646dd93fb5b4a63b34599de55d1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация итераторов  <a href="skip__list_8cpp.html#acacd646dd93fb5b4a63b34599de55d1c">Подробнее...</a><br /></td></tr>
+<tr class="separator:acacd646dd93fb5b4a63b34599de55d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad4056e597b5c35b4b163e5a47a5c875"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#aad4056e597b5c35b4b163e5a47a5c875">demonstrate_error_handling</a> ()</td></tr>
+<tr class="memdesc:aad4056e597b5c35b4b163e5a47a5c875"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация обработки ошибок  <a href="skip__list_8cpp.html#aad4056e597b5c35b4b163e5a47a5c875">Подробнее...</a><br /></td></tr>
+<tr class="separator:aad4056e597b5c35b4b163e5a47a5c875"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2707d4200b764cf2bbdc1c9bd831a98f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#a2707d4200b764cf2bbdc1c9bd831a98f">demonstrate_concepts</a> ()</td></tr>
+<tr class="memdesc:a2707d4200b764cf2bbdc1c9bd831a98f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Демонстрация концептов C++20.  <a href="skip__list_8cpp.html#a2707d4200b764cf2bbdc1c9bd831a98f">Подробнее...</a><br /></td></tr>
+<tr class="separator:a2707d4200b764cf2bbdc1c9bd831a98f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="skip__list_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a> ()</td></tr>
+<tr class="memdesc:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Главная функция  <a href="skip__list_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">Подробнее...</a><br /></td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Примеры использования STL-контейнера "Список с пропусками". </p>
+<dl class="section author"><dt>Автор</dt><dd>Pan Vladimir </dd></dl>
+<dl class="section version"><dt>Версия</dt><dd>1.0 </dd></dl>
+<dl class="section date"><dt>Дата</dt><dd>2025 </dd></dl>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a></p>
+</div><h2 class="groupheader">Функции</h2>
+<a id="a8ee54a6c0775ae6a93448571be3e27e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ee54a6c0775ae6a93448571be3e27e8">&#9670;&nbsp;</a></span>demonstrate_basic_operations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrate_basic_operations </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация основных операций со списком с пропусками </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00017">17</a></p>
+
+</div>
+</div>
+<a id="a53c59ed4295c2f19bb29067ba0e15138"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53c59ed4295c2f19bb29067ba0e15138">&#9670;&nbsp;</a></span>demonstrate_custom_types()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrate_custom_types </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация работы с пользовательскими типами </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00052">52</a></p>
+
+</div>
+</div>
+<a id="a4e4b4a9b51db6576a581b81354954553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e4b4a9b51db6576a581b81354954553">&#9670;&nbsp;</a></span>demonstrate_performance()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrate_performance </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация производительности </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00072">72</a></p>
+
+</div>
+</div>
+<a id="acacd646dd93fb5b4a63b34599de55d1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acacd646dd93fb5b4a63b34599de55d1c">&#9670;&nbsp;</a></span>demonstrate_iterators()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrate_iterators </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация итераторов </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00104">104</a></p>
+
+</div>
+</div>
+<a id="aad4056e597b5c35b4b163e5a47a5c875"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad4056e597b5c35b4b163e5a47a5c875">&#9670;&nbsp;</a></span>demonstrate_error_handling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrate_error_handling </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация обработки ошибок </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00139">139</a></p>
+
+</div>
+</div>
+<a id="a2707d4200b764cf2bbdc1c9bd831a98f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2707d4200b764cf2bbdc1c9bd831a98f">&#9670;&nbsp;</a></span>demonstrate_concepts()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void demonstrate_concepts </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Демонстрация концептов C++20. </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00168">168</a></p>
+
+</div>
+</div>
+<a id="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae66f6b31b5ad750f1fe042a706a4e3d4">&#9670;&nbsp;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Главная функция </p>
+
+<p class="definition">См. определение в файле <a class="el" href="skip__list_8cpp_source.html">skip_list.cpp</a> строка <a class="el" href="skip__list_8cpp_source.html#l00185">185</a></p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="skip__list_8cpp.html">skip_list.cpp</a></li>
+    <li class="footer">Создано системой <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
