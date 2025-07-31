@@ -37,6 +37,10 @@
 *.out
 *.app
 
+# Binary files
+*.bin
+bin/
+
 # debug information files
 *.dwo
 
