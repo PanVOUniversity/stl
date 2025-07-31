@@ -40,21 +40,3 @@ jobs:
         retention-days: 30
         
   
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
-      
-    - name: Install dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y build-essential
-        
-    - name: Build project
-      run: |
-        make clean
-        make all
-        
-    - name: Run performance tests
-      run: |
-        # Здесь можно добавить тесты производительности
-        echo "Performance tests completed" 
