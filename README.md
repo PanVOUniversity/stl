@@ -12,10 +12,10 @@ st128934@student.spbu.ru
 
 STL-контейнер "Список с пропусками" (Skip List) с полной поддержкой стандартных концептов C++20, итераторов и обработкой ошибок
 
-#Build
+# Build
 
 make all
 
-#Run Tests
+# Run Tests
 
 make tests
