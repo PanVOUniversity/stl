@@ -52,7 +52,7 @@ skip_list
 test_skip_list
 
 # Documentation
-docs/
+# docs/ - commented out for GitHub Pages
 
 # IDE files
 .vscode/
